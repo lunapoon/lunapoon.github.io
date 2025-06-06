@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Luna | Fullstack Developer & Project Leader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+        --bg: #0d1117;
+        --card: #161b22;
+        --primary: #58a6ff;
+        --text: #c9d1d9;
+        --muted: #8b949e;
+        /* --accent: #3fb950; */
+        --accent: #00bcd4;
+        }
+
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: 'Inter', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        scroll-behavior: smooth;
+        }
+
+        header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(145deg, #0d1117cc, #161b22cc),
+              url('wallpaperdark.jpg') no-repeat center center / cover;
+        /* background: linear-gradient(145deg, #0d1117, #161b22); */
+        animation: fadeIn 2s ease-out;
+        }
+
+        header h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        }
+
+        header p {
+        color: var(--muted);
+        font-size: 1.25rem;
+        margin-top: 1rem;
+        }
+
+        nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #0d1117dd;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        z-index: 1000;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            /* color: var(--accent); */
+            /* color: var(--text);
+            background-color: var(--primary); */
+            display: inline-block;
+            /* margin-top: 20px; */
+            /* padding: 12px 24px; */
+            /* background-color: var(--accent); */
+            background-color: var(--card);
+            /* background-color: var(--accent-color); */
+            color: var(--accent);
+            border-radius: 30px;
+            /* text-decoration: none;
+            font-weight: bold; */
+        }
+        section {
+            padding: 5rem 2rem;
+            /* max-width: 1000px; */
+            max-width: 70%;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 7px solid var(--primary);
+            display: inline-block;
+            /* max-width: 100%; */
+        }
+
+    .card {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        /* transition: transform 0.3s, box-shadow 0.3s; */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+        /* .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        } */
+        .card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 10px 100px rgba(0, 188, 212, 0.2);
+        }
+        .card h2 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+       
+        section h2 {
+            position: sticky;
+            top: 6rem;
+            background: var(--card); /* imita el fondo del card */
+            padding: 1.5rem;
+            margin: 0;
+            width: 100%;
+            z-index: 5;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* opcional para dar profundidad */
+            color: var(--accent);
+        }
+        .skills {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .skill:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 188, 212, 0.2); /* puedes ajustar para que contraste más */
+            /* background-color: #005f99;  */
+        }
+
+        .contact {
+        text-align: center;
+        }
+
+    .contact a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 0.5rem;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.98); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #0d1117dd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        z-index: 1000;
+    }
+
+/* Oculta el botón hamburguesa en desktop */
+    #menu-toggle {
+        display: none;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: var(--text);
+        cursor: pointer;
+    }
+
+/* Estilos para links en desktop */
+    #menu-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    #menu-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    #menu-links a:hover {
+        color: var(--accent);
+    }
+    .download-cv {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        /* background-color: var(--accent); */
+        background-color: var(--primary);
+        /* background-color: var(--accent-color); */
+        color: var(--card);
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .imagen-circular {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;          /* evita que la imagen se reduzca */
+    }
+    
+    footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+    .about-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;               /* espacio entre columnas */
+        flex-wrap: wrap;         /* se adapta en pantallas pequeñas */
+    }
+
+    .imagen-circular {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+    }
+
+    .about-text {
+        flex: 1;                 /* el texto ocupa el resto del espacio */
+        min-width: 250px;
+    }
+/* Responsive: pantallas pequeñas */
+@media (max-width: 768px) {
+
+    #menu-toggle {
+        display: block; /* muestra el botón */
+    }
+    
+    #menu-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg);
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    #menu-links.show {
+        max-height: 300px; /* suficiente para mostrar todos los links */
+    }
+
+    #menu-links a {
+        padding: 1rem 0;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid var(--card);
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- <nav>
+        <a href="#about">Sobre mí</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#certificates">Certificados</a>
+        <a href="#contact">Contacto</a>
+    </nav> -->
+    <nav>
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <div id="menu-links">
+        <a href="#about">Sobre mí</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#certificates">Certificados</a>
+        <a href="#contact">Contacto</a>
+        
+        </div>
+        <div>
+            <a href="Resume_RicardoLuna.pdf" class="download-cv" download>Descargar CV</a>
+        </div>
+    </nav>
+    <header>
+        <!-- <button id="toggle-theme" aria-label="Cambiar tema">🌓</button> -->
+
+        <h1>Ricardo Alejandro Luna Poon</h1>
+        <p>Fullstack Developer & Project Leader</p>
+        <p>Diseñando soluciones digitales potentes con visión técnica y liderazgo ágil.</p>
+        <!-- <meta name="keywords" content="Fullstack, Vue.js, .NET, Scrum, Desarrollo, Proyectos, Ricardo Luna"> -->
+        
+        <!-- <div>
+            <a href="CV-TuNombre.pdf" class="download-cv" download>Descargar CV</a>
+        </div> -->
+    </header>
+
+    <section id="about">
+        <h2>🧠 Sobre mí</h2>
+        <div class="about-container">
+            <!-- class="card" -->
+            <img src="perfil_with_bgc.png" alt="Foto de Ricardo Luna" class="imagen-circular">
+            <div class="about-text">                
+                <p>Ingeniero de software con más de 6 años de experiencia liderando y desarrollando productos tecnológicos.</p>
+                <p>Mi enfoque combina arquitectura escalable, código limpio y metodologías ágiles para maximizar impacto.</p>
+                <p>He dirigido equipos en entornos remotos, entregando productos exitosos a tiempo y dentro del presupuesto.</p>                    
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>💼 Proyectos</h2>
+        
+        <div class="card">
+            <h3>Aplicación Multiplataforma con Gestión de Usuarios y Pagos Banorte</h3>
+            <!-- <p>Desarrollo de una aplicación multiplataforma (web, iOS y Android) implementada como PWA utilizando Quasar y Vue.js 3. La solución permite la creación de usuarios, gestión de pagos e integración directa con servicios bancarios de Banorte, mejorando la accesibilidad, eficiencia operativa y experiencia del usuario.</p> -->
+            <p>Desarrollo de una aplicación multiplataforma (web, iOS y Android) como PWA utilizando Quasar y Vue.js 3, enfocada en la creación de usuarios y la gestión de pagos. Incluye integración con servicios bancarios de Banorte y soporte para pagos recurrentes, administrados a través de una API robusta desarrollada en C# .NET Core 8. Esta solución garantiza eficiencia operativa, seguridad transaccional y una experiencia de usuario unificada en todos los dispositivos.</p>
+        </div>
+        <div class="card">
+            <!-- <h3>Aplicación movil de gestión de inventario</h3> -->
+            <h3>Aplicación de Gestión de Inventario y Etiquetado de Productos NOM-051</h3>
+            <!-- <p>App Android en Java para gestión de productos y etiquetado automático conforme a NOM-051, con control de inventario en línea y mejoras en velocidad y precisión operativa.</p> -->
+            <p>Aplicación Android desarrollada en Java para la gestión de productos, control de inventario en línea y generación automática de etiquetas conforme a la norma NOM-051 de etiquetado de alimentos en México. La solución se complementa con servicios Windows desarrollados en .NET C#, encargados del procesamiento e impresión automática de etiquetas, mejorando la velocidad, precisión operativa y cumplimiento normativo.</p>
+        </div>
+        <div class="card">
+            <h3>Sistema Móvil de Inventario y Traducción Asistida por Cámara</h3>
+            <!-- <p>Desarrollo de una aplicación multiplataforma (web, iOS y Android) implementada como PWA utilizando Quasar y Vue.js 3. La solución permite la creación de usuarios, gestión de pagos e integración directa con servicios bancarios de Banorte, mejorando la accesibilidad, eficiencia operativa y experiencia del usuario.</p> -->
+            <!-- <p>Aplicación Android en Java para gestión de inventario, con traducción de etiquetas del inglés al español mediante cámara, tecnología OCR y API de traducción.</p> -->
+            <p>Aplicación Android desarrollada en Java para gestionar inventario y facilitar el surtido de pedidos, con capacidad para traducir etiquetas del inglés al español usando la cámara del dispositivo, reconocimiento óptico de caracteres (OCR) y API de traducción.</p>
+        </div>
+        <!-- <div class="card">
+            <h3>Dashboard de Análisis Financiero</h3>
+            <p>React + D3.js + Node.js. Visualización en tiempo real de KPIs financieros para startups. Incrementó la eficiencia de toma de decisiones en un 45%.</p>
+        </div>
+        <div class="card">
+            <h3>Aplicación de Gestión de Pagos</h3>
+            <p>Next.js + MongoDB + WebSockets. Plataforma educativa con chats en vivo y administración de contenido. Escalado para más de 100K usuarios.</p>
+        </div> -->
+    </section>
+
+    <section id="skills">
+        <h2>🚀 Habilidades</h2>
+        <div class="skills">
+
+            
+            <div class="skill">Scrum</div>
+            <div class="skill">Gestión de equipos</div>
+            <div class="skill">Asana</div>
+            <div class="skill">ClickUp</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Vue.js</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">TypeScript</div>
+            <div class="skill">Visual Basic</div>
+            <div class="skill">C#</div>
+            <div class="skill">.Net Core</div>
+            <div class="skill">Android</div>
+            <div class="skill">Xamarin</div>
+            <div class="skill">Java</div>
+            <div class="skill">SQLite</div>
+            <div class="skill">SQL Server</div>
+            <div class="skill">MongoDB</div>
+            <div class="skill">Git</div>
+            <div class="skill">Tortoise SVN</div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>🛠️ Experiencia</h2>
+        <div class="card">
+            <h3>Project Lead – Azzule Systems (2020 - Actualidad)</h3>
+            <!-- <p>Combino experiencia técnica con habilidades de gestión para analizar requerimientos, asignar tareas estratégicamente y liderar la entrega de soluciones robustas.</p>     -->
+            <p>Lidero proyectos de desarrollo y mantenimiento de software, coordinando equipos técnicos y asegurando la mejora continua del rendimiento en aplicaciones web, móviles y de escritorio. Enfocado en soluciones escalables, eficientes y alineadas con los objetivos del negocio.</p>
+        </div>
+        <div class="card">
+            <h3>Fullstack Developer – Azzule Systems (2019 - 2020)</h3>
+            <p>Responsable del mantenimiento correctivo y evolutivo de múltiples sistemas, identificando cuellos de botella, refactorizando código y aplicando buenas prácticas para mejorar el rendimiento general y la eficiencia del software.</p>
+        </div>
+        <div class="card">
+            <h3>Full Stack Developer – BM Systems S.C. (2017 - 2019)</h3>
+            <p>Diseño, desarrollo y mantenimiento de aplicaciones web, móviles y de escritorio, abordando tanto el frontend como el backend, garantizando rendimiento, escalabilidad y experiencia de usuario.</p>
+        </div>
+    </section>
+    <section id="certificates">
+        <h2>🏅 Certificados</h2>
+        <div class="card">
+            <h3>Scrum Foundation Professional Certification – SFPC™</h3>
+            <p>Issued by Certiprof.</p>
+        </div>
+        <div class="card">
+            <h3>Idioma Inglés B2</h3>
+            <p>Issued by Trinity College London.</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>📬 Contacto</h2>
+        <div class="card">
+            <!-- <p>E-mail: <a href="mailto:lunapoon@hotmail.com">lunapoon@hotmail.com</a> -->
+            <h3>E-mail: lunapoon@hotmail.com</h3>
+            <!-- <p>Email:lunapoon@hotmail.com -->
+            <!-- <br>LinkedIn: <a href="https://linkedin.com/in/ricardo-luna-poon">/ricardo-luna-poon</a> -->
+            <h3>LinkedIn: /ricardo-luna-poon
+                <a href="https://linkedin.com/in/ricardo-luna-poon" target="_blank" rel="noopener noreferrer">></a>
+            </h3>
+
+            <h3>Telefono: 6672.14.06.05</h3>
+            
+            <!-- <div>
+                <a href="CV-TuNombre.pdf" class="download-cv" download>Descargar CV</a>
+            </div> -->
+                <!-- <br>GitHub: /ricardoL -->
+            <!-- <p>¿Trabajamos juntos? Escríbeme:</p> -->
+            <!-- <p><a href="mailto:lunapoon@hotmail.com">lunapoon@hotmail.com</a></p> -->
+            <!-- <p> -->
+                <!-- <a href="https://linkedin.com/in/ricardo-luna-poon">LinkedIn</a> · -->
+                <!-- <a href="https://github.com/ricardoluna">GitHub</a> -->
+            <!-- </p> -->
+        </div>
+    </section>
+    
+    <footer>
+        © 2025 Ricardo Luna | Hecho con 💻 y pasión
+    </footer>
+</body>
+<script>
+    
+//   const toggleBtn = document.getElementById('menu-toggle');
+//   const menuLinks = document.getElementById('menu-links');
+
+//   toggleBtn.addEventListener('click', () => {
+//     menuLinks.classList.toggle('show');
+//   });
+const toggleBtn = document.getElementById('menu-toggle');
+const menuLinks = document.getElementById('menu-links');
+const links = menuLinks.querySelectorAll('a');
+
+toggleBtn.addEventListener('click', () => {
+  menuLinks.classList.toggle('show');
+});
+
+// Al hacer clic en cualquier enlace, oculta el menú
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    menuLinks.classList.remove('show');
+  });
+});
+</script>
+</html>
