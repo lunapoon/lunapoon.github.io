@@ -27,7 +27,7 @@
         font-family: 'Inter', sans-serif;
         background: var(--bg);
         color: var(--text);
-        line-height: 1.7;
+        line-height: 1.3;
         scroll-behavior: smooth;
         }
 
@@ -38,22 +38,237 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: linear-gradient(145deg, #0d1117cc, #161b22cc),
-              url('wallpaperdark.jpg') no-repeat center center / cover;
-        /* background: linear-gradient(145deg, #0d1117, #161b22); */
+        background: linear-gradient(145deg, #0d1117ee, #161b22ee);
         animation: fadeIn 2s ease-out;
+        padding: 2rem 1rem;
+        position: relative;
+        overflow: hidden;
+        }
+        
+        /* Efecto de partículas tecnológicas */
+        .tech-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 8s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; animation-duration: 7s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; animation-duration: 9s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; animation-duration: 6s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; animation-duration: 8s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 7s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 6s; animation-duration: 9s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 7s; animation-duration: 6s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 8s; animation-duration: 8s; }
+        .particle:nth-child(10) { left: 15%; animation-delay: 9s; animation-duration: 7s; }
+        .particle:nth-child(11) { left: 25%; animation-delay: 10s; animation-duration: 9s; }
+        .particle:nth-child(12) { left: 35%; animation-delay: 11s; animation-duration: 6s; }
+        .particle:nth-child(13) { left: 45%; animation-delay: 12s; animation-duration: 8s; }
+        .particle:nth-child(14) { left: 55%; animation-delay: 13s; animation-duration: 7s; }
+        .particle:nth-child(15) { left: 65%; animation-delay: 14s; animation-duration: 9s; }
+        
+        /* Líneas de conexión */
+        .connection-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: pulse 4s infinite ease-in-out;
+        }
+        
+        .connection-line:nth-child(16) { 
+            top: 20%; 
+            left: 10%; 
+            width: 15%; 
+            animation-delay: 0s; 
+        }
+        .connection-line:nth-child(17) { 
+            top: 40%; 
+            left: 30%; 
+            width: 20%; 
+            animation-delay: 1s; 
+        }
+        .connection-line:nth-child(18) { 
+            top: 60%; 
+            left: 50%; 
+            width: 18%; 
+            animation-delay: 2s; 
+        }
+        .connection-line:nth-child(19) { 
+            top: 80%; 
+            left: 70%; 
+            width: 12%; 
+            animation-delay: 3s; 
+        }
+        
+        /* Código flotante */
+        .floating-code {
+            position: absolute;
+            color: var(--primary);
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            opacity: 0.3;
+            animation: codeFloat 10s infinite linear;
+        }
+        
+        .floating-code:nth-child(20) { 
+            top: 15%; 
+            left: 5%; 
+            animation-delay: 0s; 
+        }
+        .floating-code:nth-child(21) { 
+            top: 35%; 
+            left: 75%; 
+            animation-delay: 2s; 
+        }
+        .floating-code:nth-child(22) { 
+            top: 65%; 
+            left: 10%; 
+            animation-delay: 4s; 
+        }
+        .floating-code:nth-child(23) { 
+            top: 85%; 
+            left: 60%; 
+            animation-delay: 6s; 
+        }
+        
+        /* Grid de fondo */
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 188, 212, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 188, 212, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s infinite linear;
+        }
+        
+        /* Animaciones */
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(100vh) scale(0.5); 
+                opacity: 0; 
+            }
+            50% { 
+                transform: translateY(50vh) scale(1); 
+                opacity: 0.8; 
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.6; }
+        }
+        
+        @keyframes codeFloat {
+            0% { 
+                transform: translateX(-100px) translateY(0); 
+                opacity: 0; 
+            }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { 
+                transform: translateX(calc(100vw + 100px)) translateY(-50px); 
+                opacity: 0; 
+            }
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
         }
 
         header h1 {
         font-size: 3.5rem;
         font-weight: 800;
         color: var(--primary);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        position: relative;
+        z-index: 2;
+        }
+        
+        /* Responsive para header en móvil */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+                line-height: 1.2;
+                text-shadow: 0 3px 15px rgba(0, 0, 0, 0.9);
+            }
+            
+            header p {
+                font-size: 1rem;
+                margin: 0.5rem 0;
+                line-height: 1.4;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            }
+            
+            header {
+                padding: 6rem 1rem 2rem 1rem;
+                min-height: 100vh;
+                background: linear-gradient(145deg, #0d1117ff, #161b22ff);
+                position: relative;
+            }
+            
+            /* Reducir intensidad de efectos en móvil */
+            .particle {
+                width: 1px;
+                height: 1px;
+                opacity: 0.5;
+            }
+            
+            .connection-line {
+                opacity: 0.3;
+            }
+            
+            .floating-code {
+                font-size: 0.6rem;
+                opacity: 0.2;
+            }
+            
+            .tech-grid {
+                background-size: 30px 30px;
+            }
+            
+            header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: 1;
+            }
+            
+            header > * {
+                position: relative;
+                z-index: 2;
+            }
         }
 
         header p {
         color: var(--muted);
         font-size: 1.25rem;
         margin-top: 1rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        position: relative;
+        z-index: 2;
         }
 
         nav {
@@ -96,6 +311,13 @@
             max-width: 90%;
             margin: auto;
         }
+        
+        /* Ajuste de padding para móvil */
+        @media (max-width: 768px) {
+            section {
+                padding: 6rem 1rem 3rem 1rem;
+            }
+        }
 
         h2 {
             /* font-size: 2.5rem; */
@@ -132,13 +354,40 @@
         section h2 {
             position: sticky;
             top: 6rem;
-            background: var(--card); /* imita el fondo del card */
-            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--card) 0%, var(--bg) 100%);
+            padding: 1.5rem 2rem;
             margin: 0;
             width: 100%;
-            z-index: 5;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* opcional para dar profundidad */
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
             color: var(--accent);
+            border-radius: 0 0 15px 15px;
+            backdrop-filter: blur(10px);
+            border-left: 4px solid var(--accent);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transform: translateY(0);
+        }
+        
+        section h2:hover {
+            box-shadow: 0 6px 30px rgba(0, 188, 212, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        section h2.active {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            color: var(--card);
+            box-shadow: 0 8px 40px rgba(0, 188, 212, 0.4), 0 0 30px rgba(0, 188, 212, 0.3);
+            animation: pulse 2s infinite;
+            transform: translateY(-3px);
+            border-left: 6px solid var(--card);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 40px rgba(0, 188, 212, 0.4); }
+            50% { box-shadow: 0 8px 40px rgba(0, 188, 212, 0.6); }
+            100% { box-shadow: 0 8px 40px rgba(0, 188, 212, 0.4); }
         }
         .skills {
             margin-top: 1rem;
@@ -170,6 +419,12 @@
         text-decoration: none;
         font-weight: bold;
         margin: 0 0.5rem;
+        transition: color 0.3s ease;
+    }
+    
+    .contact a:hover {
+        color: var(--accent);
+        transform: scale(1.1);
     }
 
     @keyframes fadeIn {
@@ -188,6 +443,13 @@
         align-items: center;
         padding: 1rem 2rem;
         z-index: 1000;
+        min-height: 4rem;
+    }
+    
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
 
 /* Oculta el botón hamburguesa en desktop */
@@ -215,6 +477,12 @@
 
     #menu-links a:hover {
         color: var(--accent);
+    }
+    
+    #language-toggle:hover {
+        background: var(--accent) !important;
+        color: var(--card) !important;
+        transform: scale(1.05);
     }
     .download-cv {
         display: inline-block;
@@ -267,6 +535,10 @@
     }
 /* Responsive: pantallas pequeñas */
 @media (max-width: 768px) {
+    nav {
+        padding: 0.5rem 1rem;
+        min-height: 1.5rem;
+    }
 
     #menu-toggle {
         display: block; /* muestra el botón */
@@ -274,7 +546,7 @@
     
     #menu-links {
         position: absolute;
-        top: 100%;
+        top: 10%;
         left: 0;
         right: 0;
         background-color: var(--bg);
@@ -286,7 +558,12 @@
     }
 
     #menu-links.show {
-        max-height: 300px; /* suficiente para mostrar todos los links */
+        max-height: 400px; /* suficiente para mostrar todos los links y el botón de idioma */
+    }
+    
+    .nav-right {
+        flex-direction: column;
+        width: 100%;
     }
 
     #menu-links a {
@@ -294,6 +571,23 @@
         width: 100%;
         text-align: center;
         border-top: 1px solid var(--card);
+    }
+    
+    #language-toggle {
+        margin: 1rem 0;
+        width: 100%;
+        padding: 12px 16px !important;
+    }
+    
+    /* Ajuste para títulos de sección en móvil */
+    section h2 {
+        top: 11.5rem !important; /* Ajustado para el nav más compacto */
+        padding: 1rem 1.5rem !important;
+        font-size: 1.5rem !important;
+    }
+    
+    section h2.active {
+        transform: translateY(-2px) !important; /* Menos elevación en móvil */
     }
 }
     </style>
@@ -319,21 +613,42 @@
         <a href="#contact">Contacto</a>
         
         </div>
-        <div>
+        <div class="nav-right">
+            <button id="language-toggle" onclick="toggleLanguage()" style="background: var(--card); color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; padding: 8px 16px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">🇺🇸 EN</button>
             <a href="Resume_RicardoLuna.pdf" class="download-cv" download>Descargar CV</a>
         </div>
     </nav>
     <header>
-        <!-- <button id="toggle-theme" aria-label="Cambiar tema">🌓</button> -->
+        <!-- Efectos de fondo animados -->
+        <div class="tech-particles">
+            <div class="tech-grid"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="connection-line"></div>
+            <div class="connection-line"></div>
+            <div class="connection-line"></div>
+            <div class="connection-line"></div>
+            <div class="floating-code">const developer = new FullStack();</div>
+            <div class="floating-code">async function build() {</div>
+            <div class="floating-code">return await deploy();</div>
+            <div class="floating-code">git commit -m "feature"</div>
+        </div>
 
         <h1>Ricardo Alejandro Luna Poon</h1>
         <p>Fullstack Developer & Project Leader</p>
         <p>Diseñando soluciones digitales potentes con visión técnica y liderazgo ágil.</p>
-        <!-- <meta name="keywords" content="Fullstack, Vue.js, .NET, Scrum, Desarrollo, Proyectos, Ricardo Luna"> -->
-        
-        <!-- <div>
-            <a href="CV-TuNombre.pdf" class="download-cv" download>Descargar CV</a>
-        </div> -->
     </header>
 
     <section id="about">
@@ -382,10 +697,9 @@
     <section id="skills">
         <h2>🚀 Habilidades</h2>
         <div class="skills">
-
-            
+         
             <div class="skill">Scrum</div>
-            <div class="skill">Gestión de equipos</div>
+            <div class="skill">Team Management</div>
             <div class="skill">Asana</div>
             <div class="skill">ClickUp</div>
             <div class="skill">HTML</div>
@@ -401,7 +715,7 @@
             <div class="skill">Java</div>
             <div class="skill">SQLite</div>
             <div class="skill">SQL Server</div>
-            <div class="skill">MongoDB</div>
+            <!-- <div class="skill">MongoDB</div> -->
             <div class="skill">Git</div>
             <div class="skill">Tortoise SVN</div>
         </div>
@@ -446,7 +760,9 @@
                 <a href="https://linkedin.com/in/ricardo-luna-poon" target="_blank" rel="noopener noreferrer">></a>
             </h3>
 
-            <h3>Telefono: 6672.14.06.05</h3>
+            <h3>Telefono: 6672.14.06.05
+                <a href="https://api.whatsapp.com/send/?phone=6672140605&text=Hola%20Ricardo%2C%20me%20gustaría%20contactarte" target="_blank" rel="noopener noreferrer">></a>
+            </h3>
             
             <!-- <div>
                 <a href="CV-TuNombre.pdf" class="download-cv" download>Descargar CV</a>
@@ -465,27 +781,5 @@
         © 2025 Ricardo Luna | Hecho con 💻 y pasión
     </footer>
 </body>
-<script>
-    
-//   const toggleBtn = document.getElementById('menu-toggle');
-//   const menuLinks = document.getElementById('menu-links');
-
-//   toggleBtn.addEventListener('click', () => {
-//     menuLinks.classList.toggle('show');
-//   });
-const toggleBtn = document.getElementById('menu-toggle');
-const menuLinks = document.getElementById('menu-links');
-const links = menuLinks.querySelectorAll('a');
-
-toggleBtn.addEventListener('click', () => {
-  menuLinks.classList.toggle('show');
-});
-
-// Al hacer clic en cualquier enlace, oculta el menú
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    menuLinks.classList.remove('show');
-  });
-});
-</script>
+<script src="script.js"></script>
 </html>
